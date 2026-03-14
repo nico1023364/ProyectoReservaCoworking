@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reserva de Espacios Coworking</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Página principal del sistema.
+         Aquí el usuario puede registrar una nueva reserva
+         y también ir a consultar la lista de reservas guardadas. -->
+    
+    <div class="container">
+        <div class="card">
+            <h1>Sistema de Reservas Coworking</h1>
+            <p class="subtitle">Completa el formulario para registrar una reserva de espacio.</p>
+
+            <form action="ReservaServlet" method="post" class="form-card">
+                <label for="nombreUsuario">Nombre del usuario</label>
+                <input type="text" id="nombreUsuario" name="nombreUsuario" placeholder="Ej: Laura Gómez" required>
+
+                <label for="fechaReserva">Fecha de reserva</label>
+                <input type="date" id="fechaReserva" name="fechaReserva" required>
+
+                <label for="espacioTrabajo">Espacio de trabajo</label>
+                <select id="espacioTrabajo" name="espacioTrabajo" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="Escritorio">Escritorio</option>
+                    <option value="Sala de reuniones">Sala de reuniones</option>
+                    <option value="Oficina privada">Oficina privada</option>
+                </select>
+
+                <label for="duracionHoras">Duración de la reserva (horas)</label>
+                <input type="number" id="duracionHoras" name="duracionHoras" min="1" placeholder="Ej: 2" required>
+
+                <button type="submit" class="btn btn-primary">Guardar reserva</button>
+            </form>
+
+            <div class="actions">
+                <form action="ListaReservasServlet" method="get">
+                    <button type="submit" class="btn btn-secondary">Ver lista de reservas</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
